@@ -1,0 +1,635 @@
+/* ============================================================
+   INED CERTIFICA — Estilos institucionales
+   Paleta: Azul marino #002147 | Dorado #C5A059 | Blanco | Gris
+   Tipografía: Playfair Display (display) + Inter (cuerpo)
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --navy:      #002147;
+  --navy-mid:  #003066;
+  --navy-light:#E8EDF4;
+  --gold:      #C5A059;
+  --gold-light:#F0E4C8;
+  --gold-dark: #A0802D;
+  --white:     #FFFFFF;
+  --gray-bg:   #F4F6F9;
+  --gray-mid:  #8A9BB0;
+  --gray-text: #4A5568;
+  --success:   #1A6B3A;
+  --success-bg:#E6F4ED;
+  --error:     #8B1A1A;
+  --error-bg:  #F9EBEB;
+  --warning:   #7A5200;
+  --warning-bg:#FFF3D6;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 2px 8px rgba(0,33,71,0.08);
+  --shadow-md: 0 6px 24px rgba(0,33,71,0.12);
+  --shadow-lg: 0 16px 48px rgba(0,33,71,0.18);
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--gray-bg);
+  color: var(--navy);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── HEADER ─────────────────────────────────────────────── */
+.site-header {
+  background: var(--navy);
+  border-bottom: 3px solid var(--gold);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Logo placeholder — reemplaza con <img src="logo.png" alt="INED"> */
+.logo-placeholder {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--gold);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+}
+
+.header-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.header-institute {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.header-system {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--gray-mid);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.header-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(197,160,89,0.12);
+  border: 1px solid rgba(197,160,89,0.35);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── HERO ────────────────────────────────────────────────── */
+.hero {
+  background: linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 100%);
+  padding: 56px 24px 64px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 60% at 80% 50%, rgba(197,160,89,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 10% 80%, rgba(197,160,89,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+  padding: 4px 14px;
+  border: 1px solid rgba(197,160,89,0.4);
+  border-radius: 20px;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 16px;
+  line-height: 1.15;
+}
+
+.hero-subtitle {
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.68);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ── MAIN ────────────────────────────────────────────────── */
+.main-content {
+  flex: 1;
+  max-width: 680px;
+  margin: -32px auto 0;
+  padding: 0 20px 60px;
+  width: 100%;
+}
+
+/* ── SEARCH CARD ─────────────────────────────────────────── */
+.search-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 32px 32px 24px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(0,33,71,0.06);
+  margin-bottom: 28px;
+}
+
+.search-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-mid);
+  margin-bottom: 10px;
+}
+
+.search-row {
+  display: flex;
+  gap: 10px;
+}
+
+.search-input {
+  flex: 1;
+  height: 52px;
+  border: 2px solid var(--navy-light);
+  border-radius: var(--radius-md);
+  padding: 0 18px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--navy);
+  background: var(--gray-bg);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  letter-spacing: 0.03em;
+}
+
+.search-input::placeholder {
+  color: var(--gray-mid);
+  font-weight: 400;
+}
+
+.search-input:focus {
+  border-color: var(--gold);
+  background: var(--white);
+  box-shadow: 0 0 0 4px rgba(197,160,89,0.12);
+}
+
+.search-btn {
+  height: 52px;
+  padding: 0 24px;
+  background: var(--gold);
+  color: var(--navy);
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+  letter-spacing: 0.02em;
+}
+
+.search-btn:hover {
+  background: var(--gold-dark);
+  box-shadow: 0 4px 16px rgba(197,160,89,0.35);
+}
+
+.search-btn:active { transform: scale(0.97); }
+
+.search-hint {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--gray-mid);
+  line-height: 1.5;
+}
+
+/* ── LOADING ─────────────────────────────────────────────── */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 32px;
+  font-size: 14px;
+  color: var(--gray-text);
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.spinner {
+  width: 22px;
+  height: 22px;
+  border: 3px solid var(--navy-light);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── RESULTADO ───────────────────────────────────────────── */
+.resultado {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  animation: fadeSlideUp 0.4s ease both;
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Banda de estado --- */
+.resultado-status {
+  padding: 22px 32px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.status-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 22px;
+}
+
+.status-texts { display: flex; flex-direction: column; gap: 2px; }
+
+.status-label {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+
+.status-sub {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+/* Variantes de estado */
+.estado-valido .resultado-status  { background: var(--success-bg); }
+.estado-valido .status-icon       { background: #C8EAD6; color: var(--success); }
+.estado-valido .status-label      { color: var(--success); }
+.estado-valido .status-sub        { color: var(--success); }
+
+.estado-anulado .resultado-status { background: var(--warning-bg); }
+.estado-anulado .status-icon      { background: #FFE8A0; color: var(--warning); }
+.estado-anulado .status-label     { color: var(--warning); }
+.estado-anulado .status-sub       { color: var(--warning); }
+
+.estado-noenc .resultado-status   { background: var(--error-bg); }
+.estado-noenc .status-icon        { background: #F5C6C6; color: var(--error); }
+.estado-noenc .status-label       { color: var(--error); }
+.estado-noenc .status-sub         { color: var(--error); }
+
+/* --- Cuerpo del certificado --- */
+.cert-body {
+  padding: 32px;
+}
+
+/* Sello visual — firma única del diseño */
+.cert-seal {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.seal-ring {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 3px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: radial-gradient(circle, rgba(197,160,89,0.08) 0%, transparent 70%);
+  animation: sealAppear 0.6s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+
+@keyframes sealAppear {
+  from { transform: scale(0.4); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.seal-ring::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  border: 1px dashed rgba(197,160,89,0.4);
+}
+
+.seal-check {
+  font-size: 38px;
+  animation: checkPop 0.4s 0.3s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+
+@keyframes checkPop {
+  from { transform: scale(0); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+/* Grid de datos */
+.cert-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 24px;
+  margin-bottom: 28px;
+}
+
+.cert-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cert-field.full {
+  grid-column: 1 / -1;
+}
+
+.field-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray-mid);
+}
+
+.field-value {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.35;
+}
+
+.field-value.destacado {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.field-value.codigo-val {
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy-mid);
+  letter-spacing: 0.05em;
+  background: var(--gray-bg);
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--navy-light);
+  display: inline-block;
+}
+
+/* Pill de estado dentro del certificado */
+.estado-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.pill-valido   { background: var(--success-bg); color: var(--success); }
+.pill-anulado  { background: var(--warning-bg); color: var(--warning); }
+
+/* Separador dorado */
+.cert-divider {
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold) 0%, rgba(197,160,89,0.15) 100%);
+  margin-bottom: 20px;
+}
+
+/* Texto de autenticidad */
+.cert-auth {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--navy-light);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 14px 16px;
+}
+
+.auth-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.auth-text {
+  font-size: 13px;
+  color: var(--gray-text);
+  line-height: 1.55;
+  font-style: italic;
+}
+
+/* Mensaje "no encontrado" */
+.no-enc-body {
+  padding: 28px 32px 32px;
+  text-align: center;
+}
+
+.no-enc-body p {
+  font-size: 14px;
+  color: var(--gray-text);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.btn-reintentar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 22px;
+  border: 2px solid var(--navy);
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--navy);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  letter-spacing: 0.02em;
+}
+
+.btn-reintentar:hover {
+  background: var(--navy);
+  color: var(--white);
+}
+
+/* ── FOOTER ──────────────────────────────────────────────── */
+.site-footer {
+  background: var(--navy);
+  border-top: 1px solid rgba(197,160,89,0.25);
+  padding: 20px 24px;
+  margin-top: auto;
+}
+
+.footer-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 13px;
+}
+
+.footer-left strong {
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.footer-left span {
+  color: rgba(255,255,255,0.5);
+  font-size: 12px;
+}
+
+.footer-right {
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ── UTILIDADES ──────────────────────────────────────────── */
+.hidden { display: none !important; }
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .header-inner   { padding: 14px 16px; }
+  .header-badge   { display: none; }
+  .header-institute { font-size: 13px; }
+
+  .hero           { padding: 40px 16px 52px; }
+
+  .main-content   { padding: 0 14px 48px; }
+
+  .search-card    { padding: 22px 18px 18px; border-radius: var(--radius-md); }
+  .search-row     { flex-direction: column; }
+  .search-btn     { height: 48px; justify-content: center; width: 100%; }
+
+  .cert-grid      { grid-template-columns: 1fr; }
+  .cert-field.full { grid-column: 1; }
+
+  .resultado-status { padding: 18px 20px; }
+  .cert-body      { padding: 22px 20px; }
+  .no-enc-body    { padding: 20px 20px 24px; }
+
+  .footer-right   { display: none; }
+}
+
+@media (max-width: 380px) {
+  .logo-placeholder { width: 40px; height: 40px; }
+  .logo-text { font-size: 12px; }
+  .hero-title { font-size: 24px; }
+}
